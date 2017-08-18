@@ -1,0 +1,11 @@
+<div class="fix single_content floatleft">
+    <img src="{{ asset('images/home_featured.png') }}" alt=""/>
+    <div class="fix single_content_info">
+        <h1>{{ article.title }}</h1>
+        <p class="author">{{ article.description }}</p>
+        <p>{{ article.content }}</p>
+        <div class="fix post-meta">
+            <p>{{ article.createdAt|date('d M Y')}}</p>
+        </div>
+    </div>
+</div>

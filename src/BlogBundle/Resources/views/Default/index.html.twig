@@ -1,0 +1,53 @@
+{% extends '::base.html.twig'%}
+
+{% block title %} Home - My Blog {% endblock %}
+
+{% block stylesheets %}{% endblock %}
+
+{% block header %}
+    {{ include("::header.html.twig") }}
+{% endblock %}
+
+{% block body %}
+    <div class="fix content_area">
+
+        {{ include("::submenu.html.twig") }}
+
+        <div class="fix wrap content_wrapper">
+            <div class="fix content">
+                <div class="fix main_content floatleft">
+                    <div class="fix single_content_wrapper">
+
+                        {% for article in articleAll %}
+                            {{ include('::article.html.twig') }}
+                        {% endfor %}
+                    </div>
+
+                    <div class="pagination fix">
+                        <a href="">1</a>
+                        <a href="">2</a>
+                        <a href="">3</a>
+                        <a href="">4</a>
+                        <a href="">5</a>
+                        <a href="">6</a>
+                    </div>
+                </div>
+                {{ include("::sidebar.html.twig") }}
+            </div>
+
+
+        </div>
+
+        <div class="fix bottom_add_bar">
+            <div class="addbar_leaderborard"><img src="http://placehold.it/728x90"/></div>
+        </div>
+
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {{ include("::footer.html.twig") }}
+{% endblock %}
+
+{% block javascripts %}
+{% endblock %}

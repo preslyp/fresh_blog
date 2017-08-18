@@ -1,0 +1,61 @@
+{% extends '::base.html.twig'%}
+
+{% block title %} {{ article.title }} {% endblock %}
+
+{% block stylesheets %}
+
+    <style>
+        .single_content_wrapper {
+            padding:30px;
+        }
+
+        .single_content_wrapper h1 {
+            margin-bottom:20px;
+        }
+
+
+    </style>
+
+{% endblock %}
+
+{% block header %}
+    {{ include("::header.html.twig") }}
+{% endblock %}
+
+{% block body %}
+    <div class="fix content_area">
+
+        {{ include("::submenu.html.twig") }}
+
+        <div class="fix wrap content_wrapper">
+            <div class="fix content">
+                <div class="fix main_content floatleft">
+                    <div class="fix single_content_wrapper">
+
+                        <h1>{{ article.title }}, {{ article.createdAt | date('Y/m/d H:i:s') }}</h1>
+
+                        <p>{{ article.description }}</p>
+
+                        <p>{{ article.content }}</p>
+
+                    </div>
+                </div>
+                {{ include("::sidebar.html.twig") }}
+            </div>
+
+
+        </div>
+
+        <div class="fix bottom_add_bar">
+            <div class="addbar_leaderborard"><img src="http://placehold.it/728x90"/></div>
+        </div>
+
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {{ include("::footer.html.twig") }}
+{% endblock %}
+
+{% block javascripts %}
+{% endblock %}
